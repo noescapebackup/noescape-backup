@@ -1,1 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>リトルパラレルワールド</title>
 
+<style>
+html,
+body{
+    margin:0;
+    min-height:100%;
+    font-family:sans-serif;
+    text-align:center;
+    background:#061428;
+}
+
+.wrap{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+    background-image:url("../../images/lp_world/narally_back.png");
+    background-size:cover;
+    background-position:center;
+}
+
+.page{
+    max-width:900px;
+    margin:0 auto;
+    padding:20px 15px 80px;
+}
+
+img{
+    display:block;
+    max-width:100%;
+    height:auto;
+    margin:0 auto;
+}
+
+.spacer{
+    height:80px;
+}
+
+.formreturn{
+    display:inline-block;
+    padding:10px 30px;
+    border-radius:5px;
+    background:#666666;
+    border-bottom:5px solid #464646;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    text-decoration:none;
+    transition:.15s;
+}
+
+.formreturn:hover{
+    transform:translateY(3px);
+    border-bottom-width:2px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap"></div>
+
+<main class="page">
+
+    <img
+        src="../../images/lp_world/lwN_2v2.png"
+        alt=""
+    >
+
+    <div class="spacer"></div>
+
+    <a
+        class="formreturn"
+        href="../nazo_rally/"
+    >
+        報告フォームへ戻る
+    </a>
+
+</main>
+
+</body>
+</html>
