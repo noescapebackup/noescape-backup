@@ -1,1 +1,263 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ST EX2</title>
 
+<style>
+html,body{
+  margin:0;
+  min-height:100%;
+  background:#061428 url('../../images/lp_world/lwN_exbackg2.png') center/cover fixed no-repeat;
+  text-align:center;
+  font-family:sans-serif;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:0 auto 24px;
+}
+
+.shishin{display:none;}
+#shishin1{display:block;}
+
+.formbox{
+  background:#000;
+  border-radius:5px;
+  border:2px solid gray;
+  margin:0 auto;
+  padding:20px 10px;
+  max-width:760px;
+}
+
+.qform{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:large;
+  font-weight:bold;
+  flex-wrap:wrap;
+}
+
+.formsent{
+  margin:10px;
+  font-size:large;
+  font-weight:bold;
+  color:white;
+}
+
+input{
+  text-align:center;
+  color:black;
+  width:70%;
+  max-width:360px;
+  border:2px solid gray;
+  padding:8px;
+}
+
+.ansbutton{
+  padding:5px 30px;
+  border-radius:5px;
+  background:#888800;
+  color:#fff;
+  border:2px solid white;
+  font-size:large;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.exnext{
+  display:inline-block;
+  margin:20px auto;
+  padding:10px 30px;
+  border-radius:5px;
+  color:#fff;
+  background:#0f23b5;
+  border-bottom:5px solid #0f0395;
+  font-size:small;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.btn{
+  display:inline-block;
+  font-weight:bold;
+  text-align:center;
+  cursor:pointer;
+  padding:6px 12px;
+  font-size:14px;
+  line-height:1.7;
+  border-radius:4px;
+  user-select:none;
+  text-decoration:none;
+}
+
+.btnb--s{
+  color:#fff;
+  background:#483d8b;
+  border-bottom:5px solid #281d6b;
+}
+
+.btnc--s{
+  color:#fff;
+  background:#6a5acd;
+  border-bottom:5px solid #4a3aad;
+}
+
+.btnz--s{
+  color:#000;
+  background:#ffff00;
+  border-bottom:5px solid #dfdf00;
+}
+
+p{
+  color:white;
+  font-weight:bold;
+}
+
+#answer{
+  color:yellow;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="shishin" id="shishin1">
+  <img src="../../images/lp_world/lwN_ex4v2.png">
+  <div class="formbox">
+    <span class="formsent">自分自身が</span><br>
+    <div class="qform">
+      <input type="text" id="exanswer1" placeholder="８文字で入力">
+    </div>
+    <span class="formsent">の中にいる。</span><br><br>
+    <button type="button" class="ansbutton" id="exbutton1">解　答</button>
+  </div>
+</div>
+
+<div class="shishin" id="shishin2">
+  <img src="../../images/lp_world/lwN_ex5-1v2.png">
+  <img src="../../images/lp_world/lwN_ex5-21.png">
+  <div class="formbox">
+    <span class="formsent">あなたが</span><br>
+    <div class="qform">
+      <input type="text" id="exanswer2_1" placeholder="３文字で入力">
+      <span class="formsent">を</span>
+      <input type="text" id="exanswer2_2" placeholder="３文字で入力">
+    </div>
+    <span class="formsent">いるとき。</span><br><br>
+    <button type="button" class="ansbutton" id="exbutton2">解　答</button>
+  </div>
+
+  <a class="exnext" href="../st_top/" target="_blank" rel="noopener noreferrer">手がかり ※別タブ</a>
+</div>
+
+<div class="shishin" id="shishin3">
+  <img src="../../images/lp_world/lwN_ex6-1v2.png">
+  <img src="../../images/lp_world/lwN_ex6-21.png">
+  <img src="../../images/lp_world/lwN_ex7v2.png">
+
+  <div class="formbox">
+    <span class="formsent">今あなたがいるのは</span><br>
+    <div class="qform">
+      <input type="text" id="exanswer3" placeholder="４文字で入力">
+      <span class="formsent">の</span>
+    </div>
+    <span class="formsent">パラレルワールド。</span><br><br>
+    <button type="button" class="ansbutton" id="exbutton3">解　答</button>
+  </div>
+
+  <a class="exnext" href="../st_1/" target="_blank" rel="noopener noreferrer">韓国からエントランスへの経路 ※別タブ</a>
+</div>
+
+<div class="shishin" id="shishin4">
+  <img src="../../images/lp_world/lwN_ex8-01.jpg">
+  <img src="../../images/lp_world/lwN_ex82.png">
+  <img src="../../images/lp_world/lwN_ex94.png">
+
+  <br><br>
+
+  <div onclick="toggleBox('A1240')">
+    <a class="btn btnb--s">最終指針のヒント</a>
+  </div>
+
+  <div id="A1240" style="display:none;clear:both;">
+    <div onclick="toggleBox('A1250')"><a class="btn btnc--s">ヒント１</a></div>
+    <div id="A1250" style="display:none;">
+      <p>魔法陣を作り出すにあたって、正確に作図されているものを使用しなければならない。<br>「あなた」が今持っているもので、円などの図形が正確に作図されていて、かつほかの情報と組み合わせられそうなものはないだろうか。</p>
+
+      <div onclick="toggleBox('A1260')"><a class="btn btnc--s">ヒント２</a></div>
+      <div id="A1260" style="display:none;">
+        <p>ニコニコトレーシングペーパーの顔の部分が使えそうだ。<br>公式ガイドブックにある魔法陣と見比べて、足りない部分を補えそうなものがないか、指定されたエリアで探してみよう。</p>
+
+        <div onclick="toggleBox('A1270')"><a class="btn btnc--s">ヒント３</a></div>
+        <div id="A1270" style="display:none;">
+          <p>異変が起きている看板に、使えそうなものがある。<br>
+          <img src="../../images/lp_world/EX_kanban.jpg">
+          トレーシングペーパーを重ねたら、目の中に表れた指示に従おう。</p>
+
+          <div onclick="toggleBox('A1280')"><a class="btn btnz--s">答え</a></div>
+          <div id="A1280" style="display:none;">
+            <p>異変が起きている看板を見つけ出し、トレーシングペーパーを重ねると、<br>「割れた完長押ししろ」<br>と指示が出る。<br><span id="answer">本編のエンディングページを見ると、割れた「完」の文字があるので長押ししよう。</span><br>現れた質問には先ほどの「岐阜県」を入力しよう。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+  <a class="exnext" href="../st_clear/" target="_blank" rel="noopener noreferrer">先ほどのCLEARページ ※別タブ</a>
+</div>
+
+<script>
+function toggleBox(id){
+  const obj = document.getElementById(id);
+  obj.style.display = obj.style.display === "block" ? "none" : "block";
+}
+
+function showStep(id){
+  document.querySelectorAll(".shishin").forEach(el => el.style.display = "none");
+  document.getElementById(id).style.display = "block";
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+document.getElementById("exbutton1").addEventListener("click", function(){
+  const a = document.getElementById("exanswer1").value.trim();
+  if(a === "パラレルワールド"){
+    alert("正解");
+    showStep("shishin2");
+  }else{
+    alert("不正解");
+  }
+});
+
+document.getElementById("exbutton2").addEventListener("click", function(){
+  const a1 = document.getElementById("exanswer2_1").value.trim();
+  const a2 = document.getElementById("exanswer2_2").value.trim();
+
+  if(a1 === "自分" && a2 === "見て"){
+    alert("正解");
+    showStep("shishin3");
+  }else{
+    alert("不正解");
+  }
+});
+
+document.getElementById("exbutton3").addEventListener("click", function(){
+  const a = document.getElementById("exanswer3").value.trim();
+
+  if(a === "岐阜県" || a === "ぎふ県" || a === "ぎふけん" || a === "ギフケン"){
+    alert("正解");
+    showStep("shishin4");
+  }else{
+    alert("不正解");
+  }
+});
+</script>
+
+</body>
+</html>
