@@ -1,1 +1,190 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ST EX1</title>
 
+<style>
+html,body{
+  margin:0;
+  min-height:100%;
+  background:#061428 url('../../images/lp_world/lwN_exbackg2.png') center/cover fixed no-repeat;
+  text-align:center;
+  font-family:sans-serif;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:0 auto 24px;
+}
+
+.fade{
+  opacity:0;
+  transform:translateY(24px);
+  animation:fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.exnext{
+  display:inline-block;
+  margin:20px auto;
+  padding:10px 30px;
+  border-radius:5px;
+  color:#fff;
+  background:#0f23b5;
+  border-bottom:5px solid #0f0395;
+  font-size:large;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.btn{
+  display:inline-block;
+  font-weight:bold;
+  text-align:center;
+  cursor:pointer;
+  padding:6px 12px;
+  font-size:14px;
+  line-height:1.7;
+  border-radius:4px;
+  text-decoration:none;
+}
+
+.btna--s{color:#fff;background:#00008b;border-bottom:5px solid #00006b;}
+.btnb--s{color:#fff;background:#483d8b;border-bottom:5px solid #281d6b;}
+.btnc--s{color:#fff;background:#6a5acd;border-bottom:5px solid #4a3aad;}
+.btnz--s{color:#000;background:#ffff00;border-bottom:5px solid #dfdf00;}
+
+p{
+  color:white;
+  font-weight:bold;
+}
+
+#answer{
+  color:yellow;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="fade">
+  <img src="../../images/lp_world/lwN_ex1v3.png">
+</div>
+
+<div style="height:31px"></div>
+
+<div class="fade" onclick="toggleBox('alue')">
+  <img src="../../images/lp_world/lwN_exb1v2.png">
+</div>
+
+<div id="alue" style="display:none;clear:both;">
+  <img src="../../images/lp_world/lwN_ex3v2.png">
+</div>
+
+<div style="height:35px"></div>
+
+<div class="fade" onclick="toggleBox('blue')">
+  <img src="../../images/lp_world/lwN_exb2v2.png">
+</div>
+
+<div id="blue" style="display:none;clear:both;">
+  <a class="exnext" href="../st_ex2/">次　へ</a>
+</div>
+
+<div style="height:35px"></div>
+
+<div class="fade" onclick="toggleBox('clue')">
+  <img src="../../images/lp_world/lwN_exb3v2.png">
+</div>
+
+<div id="clue" style="display:none;clear:both;">
+  <a class="exnext" href="../st_next/">解説はこちら</a>
+</div>
+
+<br><br>
+
+<img src="../../images/lp_world/lwN_ex21.png">
+
+<br><br><br><br>
+
+<div onclick="toggleBox('A1100')">
+  <a class="btn btna--s">ヒント</a>
+</div>
+
+<div id="A1100" style="display:none;clear:both;">
+  <p>ヒントは「指針に従って解決を目指す」前提で記載します。<br>自力で解決しようとしている方は、一度指針に従って解き進めてください。</p>
+
+  <div onclick="toggleBox('A1110')"><a class="btn btnb--s">指針１</a></div>
+  <div id="A1110" style="display:none;">
+    <div onclick="toggleBox('A1120')"><a class="btn btnc--s">ヒント</a></div>
+    <div id="A1120" style="display:none;">
+      <p>スマホの地図アプリでは一部の表示がつぶれていたり、実際に園内を歩き回ると所々看板が文字化けを起こしている。<br>これはどういった場所で見られる現象だろうか。</p>
+      <div onclick="toggleBox('A1130')"><a class="btn btnz--s">答え</a></div>
+      <div id="A1130" style="display:none;">
+        <p><span id="answer">「パラレルワールド」</span>と報告しよう。</p>
+      </div>
+    </div>
+  </div>
+
+  <div onclick="toggleBox('A1140')"><a class="btn btnb--s">指針２</a></div>
+  <div id="A1140" style="display:none;">
+    <div onclick="toggleBox('A1150')"><a class="btn btnc--s">ヒント１</a></div>
+    <div id="A1150" style="display:none;">
+      <p>パラレルワールドへの魔法陣は、謎解きのキットやパネル、ユウとのLINE、又はリトルワールドの展示で見たわけではない。<br>「あなた」が何かをしているときに、偶然見かけてしまったものだ。</p>
+      <div onclick="toggleBox('A1160')"><a class="btn btnc--s">ヒント２</a></div>
+      <div id="A1160" style="display:none;">
+        <p>「あなた」がリトルワールドへ来るとき、どうやってここまで来たか、今までのストーリーも参照しながら思い出そう。<br><br>※自分自身ではなく、ストーリー上の「あなた」として思い出してください。</p>
+        <div onclick="toggleBox('A1170')"><a class="btn btnz--s">答え</a></div>
+        <div id="A1170" style="display:none;">
+          <p>「あなた」は車に乗ってリトルワールドまで来たが、最後に駐車場に車を止める際に、看板と補助モニターの表示が合わさって魔法陣が出来上がっていた。<br>わたしが<span id="answer">「くるま」</span>を<span id="answer">「とめて」</span>いるとき、と報告しよう。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div onclick="toggleBox('A1180')"><a class="btn btnb--s">指針３</a></div>
+  <div id="A1180" style="display:none;">
+    <div onclick="toggleBox('A1190')"><a class="btn btnc--s">ヒント１</a></div>
+    <div id="A1190" style="display:none;">
+      <p>ここが「何の」パラレルワールドかを考えるにあたって、パラレルワールドのエリア区切りについて考えることが有効となる。<br>パラレルワールドでは何が起こるか改めて確認して、それが発生する場所、しない場所を特定しよう。</p>
+      <div onclick="toggleBox('A1200')"><a class="btn btnc--s">ヒント２</a></div>
+      <div id="A1200" style="display:none;">
+        <p>パラレルワールドでは看板の変化や文字化けが起きる。<br>ユウが送った写真で文字化けが発生しているエリアと、「あなた」が看板の変化を目にしてしまったエリアを確認してみよう。</p>
+        <div onclick="toggleBox('A1210')"><a class="btn btnc--s">ヒント３</a></div>
+        <div id="A1210" style="display:none;">
+          <p>スマホの地図アプリを使うと、パラレルワールドの外はつぶれて表示されるようだ。<br>本編クリア後のストーリーを見返して、ユウや、「あなた」のスマホの地図アプリがどのような区切りでつぶれた表示になっていたか確認しよう。</p>
+          <div onclick="toggleBox('A1220')"><a class="btn btnc--s">ヒント４</a></div>
+          <div id="A1220" style="display:none;">
+            <p>「あなた」がパラレルワールドに移転してしまう直前に見ていた地図アプリでは、地図上に点線が描かれていた。<br>それを「あなた」が通り越した瞬間にその点線を境に表示がつぶれた場所も表示された。<br>この点線は、何を意味する点線だろうか。<br>そして、その点線の意味を踏まえて、今「あなた」がいるエリアはどこだろうか？</p>
+            <div onclick="toggleBox('A1230')"><a class="btn btnz--s">答え</a></div>
+            <div id="A1230" style="display:none;">
+              <p>点線は県境を表していた。<br>「あなた」が県境を越えて「岐阜県」に入った瞬間、地図の表示が変わり、目の前にいたユウも消えてしまった。<br>よって今「あなた」は、<span id="answer">「岐阜県」</span>のパラレルワールドにいることになる。<br><span id="answer">「ぎふけん」</span>と報告しよう。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function toggleBox(id){
+  const obj = document.getElementById(id);
+  obj.style.display = obj.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
