@@ -56,8 +56,15 @@ img{
 document.getElementById("button1").addEventListener("click", function () {
   const ans = document.getElementById("form1").value.trim();
 
+document.getElementById("button1").addEventListener("click", function () {
+  const ans = document.getElementById("form1").value.trim();
+
   if (ans === "いらっしゃいませ") {
     location.href = "../st_3/";
+
+  } else if (ans === "一心同体") {
+    location.href = "../st_2_isshin/";
+
   } else {
     alert("不正解");
   }
