@@ -1,1 +1,214 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STAGE5</title>
 
+<style>
+html,body{
+  margin:0;
+  min-height:100%;
+  background:#061428 url('../../images/lp_world/lpwop_backg.jpg') center/cover fixed no-repeat;
+  text-align:center;
+  font-family:sans-serif;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:0 auto 24px;
+}
+
+.formbox{
+  background:#000;
+  border-radius:5px;
+  border:2px solid gray;
+  margin:0 auto;
+  padding:20px 10px;
+  max-width:760px;
+}
+
+.qform{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-weight:bold;
+  flex-wrap:nowrap;
+  margin:8px 0;
+}
+
+.formsent{
+  margin:0 10px;
+  font-weight:bold;
+  color:white;
+  white-space:nowrap;
+}
+
+input{
+  text-align:center;
+  color:black;
+  border:2px solid gray;
+  padding:8px;
+  max-width:90%;
+}
+
+.ansbutton{
+  margin:auto;
+  padding:8px 30px;
+  border-radius:5px;
+  background:#888800;
+  color:#fff;
+  border:2px solid white;
+  font-size:large;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+p{
+  color:white;
+}
+
+.btn{
+  display:inline-block;
+  margin-bottom:0;
+  font-weight:bold;
+  text-align:center;
+  cursor:pointer;
+  border:1px solid transparent;
+  white-space:nowrap;
+  padding:6px 12px;
+  font-size:14px;
+  line-height:1.7;
+  border-radius:4px;
+  user-select:none;
+  text-decoration:none;
+}
+
+.btnb--s{
+  color:#fff;
+  background:#483d8b;
+  border-bottom:5px solid #281d6b;
+}
+
+.btnc--s{
+  color:#fff;
+  background:#6a5acd;
+  border-bottom:5px solid #4a3aad;
+}
+
+.btnz--s{
+  color:#000;
+  background:#ffff00;
+  border-bottom:5px solid #dfdf00;
+}
+
+#answer{
+  color:yellow;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<img src="../../images/lp_world/lwN_time90.png">
+<img src="../../images/lp_world/lwN_62.png">
+<img src="../../images/lp_world/lwN_6-23.png">
+<img src="../../images/lp_world/lwN_6-33.png">
+
+<br><br>
+
+<div class="formbox">
+  <br>
+  <div class="qform">
+    <input type="text" id="answer2_1" placeholder="カナ７文字＋漢字１文字で入力">
+    <span class="formsent">に</span>
+  </div>
+
+  <div class="qform">
+    <input type="text" id="answer2_2" placeholder="かな７文字で入力">
+    <span class="formsent">を書き、</span>
+  </div>
+
+  <span class="formsent">写真に撮ってLINEに送る。</span>
+  <br><br>
+
+  <button type="button" class="ansbutton" id="button2">解　答</button>
+</div>
+
+<br><br>
+
+<div onclick="toggleBox('A1010')">
+  <a class="btn btnb--s">最終目標のヒント</a>
+</div>
+
+<div id="A1010" style="display:none;clear:both;">
+  <p></p>
+
+  <div onclick="toggleBox('A1020')">
+    <a class="btn btnc--s">ヒント１</a>
+  </div>
+  <div id="A1020" style="display:none;clear:both;">
+    <p>魔法陣を書くにあたっては、外側の大きな円と、その中身の要素に分けることができる。<br>まず外側の大きな円について考えよう。<br>どこかにパソコンで正確に作図されて、かつ中身の要素を入れることができる、まっさらな円が冊子に載っているので、探してみよう。</p>
+
+    <div onclick="toggleBox('A1030')">
+      <a class="btn btnc--s">ヒント２</a>
+    </div>
+    <div id="A1030" style="display:none;clear:both;">
+      <p>謎解きラリーの冊子の裏表紙を見ると、「クリアスタンプ欄」があり、中に何も書かれていない円となっている。<br>冊子として印刷されている以上、パソコンを使って正確に作図されているのでこれを使っていこう。<br>よって行動の前半の空欄には「クリアスタンプ欄」が入る。</p>
+
+      <div onclick="toggleBox('A1040')">
+        <a class="btn btnc--s">ヒント３</a>
+      </div>
+      <div id="A1040" style="display:none;clear:both;">
+        <p>あとは中身の要素を考える必要がある。<br>手書きの魔法陣は効力がないとは言うものの、それは手書きをしてはいけないという意味ではない。<br>たとえ手書きであっても、最終的にユウが魔法陣を見た時に正確な図形になっていれば問題ない。<br><br>では、手書きが正確な図形になるにはどうすればいいか考えよう。</p>
+
+        <div onclick="toggleBox('A1050')">
+          <a class="btn btnc--s">ヒント４</a>
+        </div>
+        <div id="A1050" style="display:none;clear:both;">
+          <p>魔法陣の中身は「◎」「｜」「※」「▽」で構成されている。<br>この図形をどこかで見ていないだろうか。</p>
+
+          <div onclick="toggleBox('A1060')">
+            <a class="btn btnc--s">ヒント５</a>
+          </div>
+          <div id="A1060" style="display:none;clear:both;">
+            <p>「◎」「｜」「※」「▽」を正確に書く必要はない。<br>ある現象を使えば、手書きで書いた何かが、正確な形の「◎」「｜」「※」「▽」に変わる。<br>今まで何かが「変わってしまう」という現象を何度も見てきたはずだ。<br>それを活用しよう。</p>
+
+            <div onclick="toggleBox('A1070')">
+              <a class="btn btnz--s">答え</a>
+            </div>
+            <div id="A1070" style="display:none;clear:both;">
+              <p>ユウとのLINEを思い出すと、「強制的に文字が変換される」現象が起きていた。<br>その現象は私からユウに文章や写真を送信するときにも起こることがわかっている。<br>そこで、「◎」「｜」「※」「▽」に対応する文字をユウに送れば、文字の変換が起きて正確な図形を見せることができる。<br><br>LINEを見返して、わたしが作成した対応表を参照すると、<br>「◎→へ」「｜→の」「※→も」「▽→じ」と対応している。<br>魔法陣の中身を、対応するひらがなに変換するとこのようになる。<br><img src="../../images/lp_world/a326a4127563c583fb1aabf73b3c6c89.png"><br>よって、「クリアスタンプ欄」に「へのへのもへじ」を書いてLINEに送れば、わたしの世界では手書きであっても、パラレルワールドにいるユウには電子的な記号に変換されて正確な魔法陣を見ることになる。<br><br>報告欄には<span id="answer">「クリアスタンプ欄」「へのへのもへじ」</span>と入力して送信しよう。</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleBox(id){
+  const obj = document.getElementById(id);
+  obj.style.display = obj.style.display === "block" ? "none" : "block";
+}
+
+document.getElementById("button2").addEventListener("click", function(){
+  const a1 = document.getElementById("answer2_1").value.trim();
+  const a2 = document.getElementById("answer2_2").value.trim();
+
+  if(a1 === "クリアスタンプ欄" && a2 === "へのへのもへじ"){
+    alert("正解");
+    location.href = "../st_6/";
+  }else{
+    alert("不正解");
+  }
+});
+</script>
+
+</body>
+</html>
