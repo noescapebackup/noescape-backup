@@ -13,6 +13,16 @@
       text-align: center;
     }
 
+    .wrap {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      background-image: url('https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_edback3.png');
+      background-size: cover;
+      background-position: center;
+    }
+
     .page {
       max-width: 900px;
       margin: 0 auto;
@@ -29,6 +39,26 @@
 
     a img {
       pointer-events: auto;
+    }
+
+    #endtitle {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      user-select: none;
+    }
+
+    #action {
+      position: absolute;
+      background: transparent;
+      width: 48%;
+      height: 20%;
+      top: 56%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      user-select: none;
+      pointer-events: auto;
+      cursor: pointer;
     }
 
     .fade {
@@ -64,6 +94,10 @@
       animation: pulse 1.6s infinite;
     }
 
+    .tap-button img {
+      pointer-events: auto;
+    }
+
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.03); }
@@ -81,26 +115,80 @@
 
     .exnext {
       display: inline-block;
+      text-align: center;
       margin: 24px auto;
-      padding: 16px 28px;
-      background: #fff;
-      color: #061428;
-      border-radius: 999px;
-      text-decoration: none;
+      padding: 10px 30px;
+      border-radius: 5px;
+      color: #ffffff;
+      line-height: 1.3;
+      font-size: large;
       font-weight: bold;
-      font-size: 18px;
+      background-color: #0f23b5;
+      border-bottom: 5px solid #0f0395;
+      text-decoration: none;
+    }
+
+    .exnext:hover {
+      margin-top: 27px;
+      background: #0f23b5;
+      border-bottom: 2px solid #0f0395;
+      text-decoration: none;
+    }
+
+    #exansbg {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 21;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    #exansbg.is-active {
+      opacity: 1;
+      pointer-events: auto;
+      overflow: hidden;
     }
 
     #exansform {
-      margin: 40px auto 0;
-      padding: 24px 16px;
-      max-width: 520px;
-      background: rgba(255,255,255,.92);
-      color: #111;
-      border-radius: 16px;
-      box-sizing: border-box;
-      line-height: 1.8;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 95%;
+      max-height: 90vh;
+      max-height: 90svh;
+      max-height: 90dvh;
+      align-items: center;
+      justify-content: center;
+      z-index: 30;
+      background: white;
+      border-radius: 5px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    #exansform.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .exans-inner {
+      max-height: 80vh;
+      max-height: 80svh;
+      max-height: 80dvh;
+      overflow-y: auto;
+      padding: 60px 20px 20px;
+      margin: auto;
+      background-color: #000055;
+      color: white;
       font-weight: bold;
+      border: 1px solid white;
+      border-radius: 5px;
+      text-align: center;
+      line-height: 1.8;
     }
 
     .txt {
@@ -114,13 +202,15 @@
     }
 
     .exansbutton {
-      margin-top: 16px !important;
-      padding: 12px 32px;
-      border: none;
-      border-radius: 999px;
-      background: #061428;
-      color: #fff;
-      font-size: 18px;
+      display: block;
+      text-align: center;
+      margin: 16px auto 0;
+      padding: 5px 30px;
+      border-radius: 5px;
+      background-color: black;
+      color: #ffffff;
+      line-height: 1.3;
+      font-size: large;
       font-weight: bold;
       cursor: pointer;
     }
@@ -128,14 +218,21 @@
 </head>
 
 <body>
+  <div class="wrap"></div>
+
   <main class="page">
 
     <div class="fade">
-      <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_ed03.png">
+      <div id="endtitle">
+        <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_ed03.png">
+        <div id="action"></div>
+      </div>
     </div>
 
     <div class="fade">
-      <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_ed14.png">
+      <div id="endtitle">
+        <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_ed14.png">
+      </div>
     </div>
 
     <div class="fade">
@@ -178,6 +275,8 @@
       <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_yu2.png">
     </div>
 
+    <div id="exansbg"></div>
+
     <div id="exansform">
       <div class="exans-inner">
         あなたが最後に報告した、<br>
@@ -204,8 +303,68 @@
         dlue.style.display = 'block';
       }
     }
-  </script>
 
-  <script src="https://noescape.co.jp/nazomemo/wp-content/themes/habakiri/js/script20.js" defer></script>
+    document.onkeypress = function () {
+      if (window.event && window.event.keyCode === 13) {
+        return false;
+      }
+    };
+
+    const exbuttonLast = document.getElementById("exbuttonlast");
+    if (exbuttonLast) {
+      exbuttonLast.addEventListener("click", () => {
+        const aValue = document.getElementById("exform").value;
+
+        if (
+          aValue === "蟯宣�逵�" ||
+          aValue === "縺弱�逵�" ||
+          aValue === "縺弱�縺代ｓ" ||
+          aValue === "繧ｮ繝輔こ繝ｳ" ||
+          aValue === "�ｷ�橸ｾ鯉ｽｹ��"
+        ) {
+          alert("正解");
+          location.href = "https://noescape.co.jp/nazomemo/lp_world/ex1/excl/";
+        } else {
+          alert("不正解");
+        }
+      });
+    }
+
+    let pressTimer = null;
+    const action = document.getElementById("action");
+
+    function startPress() {
+      pressTimer = setTimeout(() => {
+        document.getElementById("exansform").classList.add("is-active");
+        document.getElementById("exansbg").classList.add("is-active");
+      }, 3000);
+    }
+
+    function endPress() {
+      if (pressTimer) {
+        clearTimeout(pressTimer);
+        pressTimer = null;
+      }
+    }
+
+    function closeAns() {
+      document.getElementById("exansform").classList.remove("is-active");
+      document.getElementById("exansbg").classList.remove("is-active");
+    }
+
+    if (action) {
+      const exansbg = document.getElementById("exansbg");
+
+      if (exansbg) {
+        exansbg.addEventListener("click", closeAns);
+      }
+
+      action.addEventListener("mousedown", startPress);
+      action.addEventListener("mouseup", endPress);
+      action.addEventListener("mouseleave", endPress);
+      action.addEventListener("touchstart", startPress);
+      action.addEventListener("touchend", endPress);
+    }
+  </script>
 </body>
 </html>
