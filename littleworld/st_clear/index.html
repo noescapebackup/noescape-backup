@@ -1,1 +1,252 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ST CLEAR</title>
 
+<style>
+html,body{
+  margin:0;
+  min-height:100%;
+  background:#061428 url('../../images/lp_world/lwN_edback3.png') center/cover fixed no-repeat;
+  text-align:center;
+  font-family:sans-serif;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:0 auto 24px;
+}
+
+.fade{
+  opacity:0;
+  transform:translateY(24px);
+  animation:fadeInUp 1.2s ease forwards;
+}
+
+.fade:nth-of-type(1){animation-delay:.1s;}
+.fade:nth-of-type(2){animation-delay:.3s;}
+.fade:nth-of-type(3){animation-delay:.5s;}
+.fade:nth-of-type(4){animation-delay:.7s;}
+.fade:nth-of-type(5){animation-delay:.9s;}
+
+@keyframes fadeInUp{
+  to{opacity:1;transform:translateY(0);}
+}
+
+#action{
+  cursor:pointer;
+  user-select:none;
+}
+
+.exnext{
+  display:inline-block;
+  margin:20px auto;
+  padding:10px 30px;
+  border-radius:5px;
+  color:#fff;
+  background:#0f23b5;
+  border-bottom:5px solid #0f0395;
+  font-size:large;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+#exansbg{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  z-index:21;
+  opacity:0;
+  pointer-events:none;
+  transition:.4s;
+}
+
+#exansbg.is-active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+#exansform{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:95%;
+  max-height:90vh;
+  z-index:30;
+  background:#fff;
+  border-radius:5px;
+  pointer-events:none;
+  opacity:0;
+  transition:.4s;
+}
+
+#exansform.is-active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.exans-inner{
+  max-height:80vh;
+  overflow-y:auto;
+  padding:60px 20px 20px;
+  background:#000055;
+  color:#fff;
+  font-weight:bold;
+  border:1px solid #fff;
+  border-radius:5px;
+  text-align:center;
+  line-height:1.8;
+}
+
+.txt{
+  width:80%;
+  max-width:320px;
+  padding:12px;
+  font-size:18px;
+  border-radius:8px;
+  border:1px solid #aaa;
+  text-align:center;
+}
+
+.exansbutton{
+  display:block;
+  margin:16px auto 0;
+  padding:5px 30px;
+  border-radius:5px;
+  background:#000;
+  color:#fff;
+  font-size:large;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="fade">
+  <img id="action" src="../../images/lp_world/lwN_ed03.png">
+</div>
+
+<div class="fade">
+  <img src="../../images/lp_world/lwN_ed14.png">
+</div>
+
+<div class="fade">
+  <img src="../../images/lp_world/lwN_ed23.png">
+</div>
+
+<div class="fade">
+  <img src="../../images/lp_world/lwN_ed33-1.png">
+</div>
+
+<div class="fade">
+  <img src="../../images/lp_world/lwN_ed43.png">
+</div>
+
+<a href="https://twitter.com/intent/tweet?text=%E3%80%90%E3%83%AA%E3%83%88%E3%83%AB%E3%83%91%E3%83%A9%E3%83%AC%E3%83%AB%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%80%91%0A%E4%B8%8A%E7%B4%9A%E7%B7%A8%E3%80%80%E3%83%AA%E3%82%A2%E3%83%AB%E8%AC%8E%E8%A7%A3%E3%81%8D%E3%82%B2%E3%83%BC%E3%83%A0%E3%80%80%E5%9B%9E%E9%81%8A%E5%AE%8C%E4%BA%86%0A%0A%23%E3%83%AA%E3%83%88%E3%83%AB%E3%83%91%E3%83%A9%E3%83%AC%E3%83%AB%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%80%80%23%E3%83%AA%E3%83%88%E3%83%AB%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E8%AC%8E%E3%80%80%23%E7%95%B0%E5%A4%89%E5%9B%9E%E9%81%8A%E3%80%80%23NoEscape%E8%84%B1%E5%87%BA%0A%0Ahttps%3A%2F%2Fx.com%2FNoEscape_game%2Fstatus%2F2029508469347520807%3Fs%3D20" target="_blank" rel="noopener noreferrer">
+  <img src="../../images/lp_world/lwN_Xbu1.jpg">
+</a>
+
+<div style="height:100px"></div>
+
+<img src="../../images/lp_world/lwN_yav2.png">
+
+<div onclick="toggleClue()" style="cursor:pointer;">
+  <img src="../../images/lp_world/lwN_exbu3.png">
+</div>
+
+<div id="clue" style="display:none;clear:both;">
+  <img src="../../images/lp_world/lwN_ex_ent3.png">
+  <br><br>
+  <img src="../../images/lp_world/lwN_ex_ent23.png">
+  <br><br><br><br>
+  <a class="exnext" href="../st_ex1/">エクストラストーリーへ</a>
+</div>
+
+<div style="height:300px"></div>
+
+<div id="dlue" style="display:block;clear:both;">
+  <img src="../../images/lp_world/lwN_yu2.png">
+</div>
+
+<div id="exansbg"></div>
+
+<div id="exansform">
+  <div class="exans-inner">
+    あなたが最後に報告した、<br>
+    場所の名前を表す言葉を<br>
+    ４文字で答えてください。<br><br>
+
+    <input type="text" class="txt" id="exform" placeholder="４文字の言葉を入力"><br>
+    <button type="button" class="exansbutton" id="exbuttonlast">解　答</button>
+  </div>
+</div>
+
+<script>
+function toggleClue(){
+  const clue=document.getElementById("clue");
+  const dlue=document.getElementById("dlue");
+
+  if(clue.style.display==="block"){
+    clue.style.display="none";
+    dlue.style.display="block";
+  }else{
+    clue.style.display="block";
+    dlue.style.display="none";
+  }
+}
+
+let pressTimer=null;
+const action=document.getElementById("action");
+
+function startPress(){
+  pressTimer=setTimeout(()=>{
+    document.getElementById("exansform").classList.add("is-active");
+    document.getElementById("exansbg").classList.add("is-active");
+  },3000);
+}
+
+function endPress(){
+  clearTimeout(pressTimer);
+  pressTimer=null;
+}
+
+function closeAns(){
+  document.getElementById("exansform").classList.remove("is-active");
+  document.getElementById("exansbg").classList.remove("is-active");
+}
+
+action.addEventListener("mousedown",startPress);
+action.addEventListener("mouseup",endPress);
+action.addEventListener("mouseleave",endPress);
+action.addEventListener("touchstart",startPress);
+action.addEventListener("touchend",endPress);
+
+document.getElementById("exansbg").addEventListener("click",closeAns);
+
+document.getElementById("exbuttonlast").addEventListener("click",()=>{
+  const a=document.getElementById("exform").value.trim();
+
+  if(
+    a==="岐阜県" ||
+    a==="ぎふ県" ||
+    a==="ぎふけん" ||
+    a==="ギフケン" ||
+    a==="ｷﾞﾌｹﾝ"
+  ){
+    alert("正解");
+    location.href="../st_ex1/";
+  }else{
+    alert("不正解");
+  }
+});
+</script>
+
+</body>
+</html>
