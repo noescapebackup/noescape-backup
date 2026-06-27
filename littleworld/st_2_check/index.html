@@ -53,23 +53,25 @@ img{
 <button type="button" class="ansbutton" id="button1">解　答</button>
 
 <script>
-document.getElementById("button1").addEventListener("click", function () {
-  const ans = document.getElementById("form1").value.trim();
 
 document.getElementById("button1").addEventListener("click", function () {
-  const ans = document.getElementById("form1").value.trim();
+  const ans = document.getElementById("form1").value
+    .trim()
+    .replace(/\s/g, "");
 
   if (ans === "いらっしゃいませ") {
     location.href = "../st_3/";
 
-  } else if (ans === "一心同体") {
+  } else if (
+    ans === "一心同体" ||
+    ans === "いっしんどうたい"
+  ) {
     location.href = "../st_2_isshin/";
 
   } else {
     alert("不正解");
   }
 });
-</script>
 
 </body>
 </html>
