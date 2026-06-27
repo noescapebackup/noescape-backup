@@ -1,1 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>報告フォーム</title>
 
+<style>
+html,body{
+  margin:0;
+  min-height:100%;
+  background:#061428 url('../../images/lp_world/narally_back.png') center/cover fixed no-repeat;
+  text-align:center;
+  font-family:sans-serif;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:0 auto 24px;
+}
+
+.txt{
+  width:80%;
+  max-width:360px;
+  padding:10px;
+  font-size:18px;
+  text-align:center;
+  border:2px solid #999;
+  border-radius:4px;
+}
+
+.ansbutton{
+  margin:16px auto;
+  padding:8px 24px;
+  border-radius:5px;
+  background:black;
+  color:#fff;
+  border:none;
+  font-size:large;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<img src="../../images/lp_world/lwN_form2.png" alt="">
+
+<input type="text" class="txt" id="form1" placeholder="解答入力"><br>
+<button type="button" class="ansbutton" id="button1">解　答</button>
+
+<script>
+document.getElementById("button1").addEventListener("click", function(){
+  const ans = document.getElementById("form1").value.trim();
+
+  if(ans === "しんこう"){
+    location.href = "../st_1/";
+  }else if(ans === "ふんすい" || ans === "噴水"){
+    location.href = "../st_2/";
+  }else if(ans === "ちくさん" || ans === "畜産"){
+    location.href = "../st_3/";
+  }else if(ans === "いらっしゃいませ"){
+    location.href = "../st_4/";
+  }else{
+    alert("不正解");
+  }
+});
+</script>
+
+</body>
+</html>
