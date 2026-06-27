@@ -39,13 +39,7 @@ body {
 }
 
 .wrap2 {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  background-color: white;
-  pointer-events: none;
-  opacity: 0.5;
+  display:none;
 }
 
 .stage {
@@ -57,6 +51,26 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 1;
+}
+
+  .glitch-slice{
+    position:absolute;
+    left:0;
+    width:100%;
+    z-index:5;
+    background-image:url('/noescape-backup/images/lp_world/bug_backg.jpg');
+    background-size:cover;
+    background-position:center;
+    pointer-events:none;
+}
+  .wrap{
+    position:fixed;
+    inset:0;
+    z-index:0;
+}
+  .stage{
+    position:relative;
+    z-index:10;
 }
 
 #mapError {
