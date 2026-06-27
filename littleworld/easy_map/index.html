@@ -1,1 +1,487 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>リトルパラレルワールド MAP</title>
 
+<style>
+html {
+  touch-action: manipulation;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+.wrap {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background-image: url('/noescape-backup/images/lp_world/bug_backg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.glitch-slice {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-image: url('/noescape-backup/images/lp_world/bug_backg.jpg');
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+.wrap2 {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background-color: white;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.stage {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+#mapError {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+}
+
+#mapError img,
+#errorExp img,
+.archive-inner img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#action1,
+#action2 {
+  position: absolute;
+  background: transparent;
+}
+
+#action1 {
+  width: 33%;
+  height: 25%;
+  top: 85%;
+  left: 83%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+#action2 {
+  width: 13%;
+  height: 17%;
+  top: 12%;
+  left: 24%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  cursor: pointer;
+}
+
+#errorExp {
+  position: relative;
+  display: none;
+  max-width: 100%;
+  height: auto;
+  z-index: 15;
+}
+
+#arcbg,
+#ansbg {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 21;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+#arcbg.is-active,
+#ansbg.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  overflow: hidden;
+}
+
+#archive,
+#ansform {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  max-height: 90vh;
+  max-height: 90svh;
+  max-height: 90dvh;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+  background: white;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#archive.is-active,
+#ansform.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.archive-inner,
+.ans-inner {
+  max-height: 80vh;
+  max-height: 80svh;
+  max-height: 80dvh;
+  overflow-y: auto;
+  padding: 60px 20px 20px;
+  margin: auto;
+}
+
+#arcclose,
+#ansclose {
+  position: absolute;
+  display: inline-block;
+  top: 16px;
+  right: 16px;
+  z-index: 25;
+  border-radius: 9999px;
+  background: #dddddd;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+
+.tab {
+  position: fixed;
+  bottom: 30px;
+  text-align: center;
+  text-decoration: none;
+  width: 75px;
+  margin: auto;
+  padding: 5px;
+  border-radius: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000000;
+  line-height: 1.3;
+  border: none;
+  box-shadow: rgba(0,0,0,0.8) 3px 3px 5px;
+  font-size: small;
+  display: none;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.arcbox {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.2);
+  padding: 12px;
+}
+
+#ansopen {
+  bottom: 30px;
+  font-weight: bold;
+  border-radius: 9999px;
+  width: 100px;
+  color: #ffffff;
+  background-color: rgba(255, 0, 0, 0.9);
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.ansbutton {
+  text-align: center;
+  margin: auto;
+  padding: 5px;
+  border-radius: 0.3rem;
+  background-color: black;
+  color: #ffffff;
+  line-height: 1.3;
+  border: none;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.txt {
+  width: 80%;
+  max-width: 360px;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+  border: 2px solid #999;
+  border-radius: 4px;
+}
+
+.title {
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#checkarc {
+  right: 10px;
+}
+
+.place {
+  font-size: medium;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap" id="glitchWrap"></div>
+<div class="wrap2"></div>
+
+<div class="stage">
+  <div id="mapError">
+    <img src="/noescape-backup/images/lp_world/e_maperrorv3.png" alt="">
+    <div id="action1"></div>
+    <div id="action2"></div>
+  </div>
+
+  <div class="errorExp" id="errorExp">
+    <img src="/noescape-backup/images/lp_world/e_mapexpv8.png" alt="">
+  </div>
+</div>
+
+<div id="ansopen" class="tab">クリア<br>キーワードを<br>入力</div>
+
+<div id="ansbg"></div>
+<div id="ansform">
+  <div id="ansclose">閉じる</div>
+
+  <div class="ans-inner">
+    <input type="text" class="txt" id="form1" value="" placeholder="９文字の言葉を入力"><br><br>
+    <button type="button" class="ansbutton" id="button1">　解　答　</button>
+  </div>
+</div>
+
+<div id="arcbg"></div>
+<div id="archive">
+  <div id="arcclose">閉じる</div>
+
+  <div class="archive-inner">
+    <div class="arcbox">
+      <div class="title">スタートパネル</div>
+      <div class="place">場所：MAP上の<span style="background:#00a273;color:white;">▲</span>の位置</div>
+      <img src="/noescape-backup/images/lp_world/lpwe_info0.jpg" alt="">
+    </div><br>
+
+    <div class="arcbox">
+      <div class="title">第１のスタンプ</div>
+      <div class="place">場所：沖縄県　石垣島の家</div>
+      <img src="/noescape-backup/images/lp_world/lpwe_info1.jpg" alt="">
+    </div><br>
+
+    <div class="arcbox">
+      <div class="title">第２のスタンプ</div>
+      <div class="place">場所：アラスカ　トリンギットの家</div>
+      <img src="/noescape-backup/images/lp_world/lpwe_info2.jpg" alt="">
+    </div><br>
+
+    <div class="arcbox">
+      <div class="title">第３のスタンプ</div>
+      <div class="place">場所：ポリネシア　サモアの家</div>
+      <img src="/noescape-backup/images/lp_world/lpwe_info3.jpg" alt="">
+    </div><br>
+
+    <div class="arcbox">
+      <div class="title">第４のスタンプ</div>
+      <div class="place">場所：ドイツ　聖ゲオルグ礼拝堂</div>
+      <img src="/noescape-backup/images/lp_world/lpwe_info4.jpg" alt="">
+    </div><br>
+
+    <div class="arcbox">
+      <div class="title">第５のスタンプ</div>
+      <div class="place">場所：アフリカンプラザ</div>
+      <img src="/noescape-backup/images/lp_world/lpwe_info5.jpg" alt="">
+    </div><br>
+
+    <div class="arcbox">
+      <div class="title">第６のスタンプ</div>
+      <div class="place">場所：トルコ　イスタンブールの街<br>イスラム文化紹介コーナー</div>
+      <img src="/noescape-backup/images/lp_world/lpwe_info6.jpg" alt="">
+    </div><br>
+
+    <div class="arcbox">
+      <div class="title">第７のスタンプ</div>
+      <div class="place">場所：韓国　農家</div>
+      <img src="/noescape-backup/images/lp_world/lpwe_info7.jpg" alt="">
+    </div><br>
+
+    <div class="arcbox">
+      <div class="title">第８のスタンプ</div>
+      <div class="place">場所：MAP上の「時計」の位置</div>
+      <img src="/noescape-backup/images/lp_world/lpwe_info8.jpg" alt="">
+    </div>
+  </div>
+</div>
+
+<div id="checkarc" class="tab">スタンプや<br>パネルを<br>見返す</div>
+
+<script>
+document.onkeypress = function(){
+  if(window.event && window.event.keyCode === 13){
+    return false;
+  }
+};
+
+const mapError = document.getElementById("mapError");
+const action1 = document.getElementById("action1");
+const action2 = document.getElementById("action2");
+const errorExp = document.getElementById("errorExp");
+const checkarc = document.getElementById("checkarc");
+const archive = document.getElementById("archive");
+
+let count19_step = parseInt(localStorage.getItem("count19_step")) || 1;
+
+if(action1){
+  action1.addEventListener("click", () => {
+    mapError.style.display = "none";
+    setTimeout(() => {
+      mapError.style.display = "block";
+    }, 1000);
+  });
+}
+
+let pressTimer = null;
+
+function startPress(){
+  pressTimer = setTimeout(() => {
+    errorExp.style.display = "block";
+    checkarc.style.display = "block";
+    document.getElementById("ansopen").style.display = "block";
+    mapError.style.display = "none";
+    count19_step = 2;
+    localStorage.setItem("count19_step", count19_step);
+  }, 3000);
+}
+
+function endPress(){
+  if(pressTimer){
+    clearTimeout(pressTimer);
+    pressTimer = null;
+  }
+}
+
+if(action2){
+  action2.addEventListener("mousedown", startPress);
+  action2.addEventListener("mouseup", endPress);
+  action2.addEventListener("mouseleave", endPress);
+  action2.addEventListener("touchstart", startPress);
+  action2.addEventListener("touchend", endPress);
+}
+
+document.getElementById("ansopen").addEventListener("click", () => {
+  document.getElementById("ansform").classList.add("is-active");
+  document.getElementById("ansbg").classList.add("is-active");
+});
+
+document.getElementById("ansclose").addEventListener("click", closeAns);
+document.getElementById("ansbg").addEventListener("click", closeAns);
+
+function closeAns(){
+  document.getElementById("ansform").classList.remove("is-active");
+  document.getElementById("ansbg").classList.remove("is-active");
+}
+
+document.getElementById("button1").addEventListener("click", () => {
+  const aValue = document.getElementById("form1").value.trim().replace(/\s/g,"");
+
+  if(
+    aValue === "異文化交流" ||
+    aValue === "いぶんかこうりゅう" ||
+    aValue === "イブンカコウリュウ"
+  ){
+    alert("正解");
+    window.open("/noescape-backup/littleworld/last_plus/");
+  }else if(
+    aValue === "文化交流" ||
+    aValue === "ぶんかこうりゅう" ||
+    aValue === "ブンカコウリュウ"
+  ){
+    alert("不正解\n\nクリアキーワードは9文字です。");
+  }else{
+    alert("不正解");
+  }
+});
+
+if(checkarc){
+  checkarc.addEventListener("click", () => {
+    archive.classList.add("is-active");
+    document.getElementById("arcbg").classList.add("is-active");
+  });
+
+  document.getElementById("arcclose").addEventListener("click", closeArc);
+  document.getElementById("arcbg").addEventListener("click", closeArc);
+}
+
+function closeArc(){
+  archive.classList.remove("is-active");
+  document.getElementById("arcbg").classList.remove("is-active");
+}
+
+const wrap = document.getElementById("glitchWrap");
+
+function glitchOnce(){
+  const sliceCount = Math.floor(Math.random() * 3) + 1;
+
+  for(let i = 0; i < sliceCount; i++){
+    const slice = document.createElement("div");
+    slice.className = "glitch-slice";
+
+    const sliceHeight = Math.random() * 6 + 3;
+    const sliceTop = Math.random() * 100;
+    const shift = (Math.random() - 0.5) * 40;
+
+    slice.style.height = sliceHeight + "%";
+    slice.style.top = sliceTop + "%";
+    slice.style.transform = `translateX(${shift}px)`;
+
+    wrap.appendChild(slice);
+
+    setTimeout(() => {
+      slice.remove();
+    }, 80);
+  }
+}
+
+if(wrap){
+  setInterval(() => {
+    if(Math.random() < 0.4){
+      glitchOnce();
+    }
+  }, 600);
+}
+</script>
+
+</body>
+</html>
