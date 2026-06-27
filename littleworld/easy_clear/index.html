@@ -1,1 +1,262 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>リトルパラレルワールド 初級 CLEAR</title>
 
+<style>
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  background:#061428;
+  color:white;
+  font-family:sans-serif;
+  text-align:center;
+}
+
+.wrap{
+  position:fixed;
+  inset:0;
+  z-index:-10;
+  overflow:hidden;
+  background-image:url('../../images/lp_world/lpwop_edbackg.jpg');
+  background-size:cover;
+  background-position:center;
+}
+
+.page{
+  max-width:900px;
+  margin:0 auto;
+  padding:24px 12px 120px;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:0 auto 24px;
+}
+
+a img{
+  pointer-events:auto;
+}
+
+.fade{
+  opacity:0;
+  transform:translateY(24px);
+  animation:fadeInUp 1s ease forwards;
+}
+
+.fade:nth-child(1){animation-delay:0s;}
+.fade:nth-child(2){animation-delay:.4s;}
+.fade:nth-child(3){animation-delay:.8s;}
+
+@keyframes fadeInUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.btn{
+  display:inline-block;
+  width:70%;
+  margin-bottom:0;
+  font-weight:bold;
+  text-align:center;
+  vertical-align:middle;
+  cursor:pointer;
+  background-image:none;
+  border:1px solid transparent;
+  white-space:nowrap;
+  padding:6px 12px;
+  font-size:14px;
+  line-height:1.7;
+  border-radius:4px;
+  user-select:none;
+  text-decoration:none;
+}
+
+.btna--s{
+  font-weight:bold;
+  color:#fff;
+  background-color:#860000;
+  border-bottom:5px solid #660000;
+}
+
+.btna--s:hover{
+  margin-top:3px;
+  color:#fff;
+  background:#860000;
+  border-bottom:2px solid #660000;
+  font-weight:bold;
+}
+
+#A00{
+  display:none;
+  clear:both;
+}
+
+#book{
+  position:relative;
+  margin:auto;
+}
+
+.bookpage{
+  display:none;
+}
+
+.bookpage.active{
+  display:block;
+  width:100%;
+  background-color:white;
+}
+
+.arrowrow{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  margin:20px 0 60px;
+}
+
+.arrows{
+  display:flex;
+  text-decoration:none;
+  background:white;
+  color:black;
+  width:60px;
+  height:60px;
+  line-height:60px;
+  border-radius:50%;
+  text-align:center;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  opacity:.8;
+  font-size:32px;
+  font-weight:bold;
+  cursor:pointer;
+  user-select:none;
+}
+
+.arrows:hover{
+  opacity:1;
+}
+</style>
+</head>
+
+<body>
+<div class="wrap"></div>
+
+<main class="page">
+
+  <div class="fade">
+    <img src="../../images/lp_world/e_ed.png" alt="">
+  </div>
+
+  <div class="fade">
+    <a href="https://twitter.com/intent/tweet?text=%E3%80%90%E3%83%AA%E3%83%88%E3%83%AB%E3%83%91%E3%83%A9%E3%83%AC%E3%83%AB%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%80%91%0A%E5%88%9D%E7%B4%9A%E7%B7%A8%E3%80%80%E3%82%AF%E3%82%A4%E3%82%BA%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%97%E3%83%A9%E3%83%AA%E3%83%B0%E3%80%80%E5%9B%9E%E9%81%8A%E5%AE%8C%E4%BA%86%0A%0A%23%E3%83%AA%E3%83%88%E3%83%AB%E3%83%91%E3%83%A9%E3%83%AC%E3%83%AB%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%80%80%23%E3%83%AA%E3%83%88%E3%83%AB%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E8%AC%8E%E3%80%80%23%E7%95%B0%E5%A4%89%E5%9B%9E%E9%81%8A%E3%80%80%23NoEscape%E8%84%B1%E5%87%BA%0A%0Ahttps%3A%2F%2Fx.com%2FNoEscape_game%2Fstatus%2F2029508469347520807%3Fs%3D20" target="_blank" rel="noopener noreferrer">
+      <img src="../../images/lp_world/e_post.png" alt="">
+    </a>
+  </div>
+
+  <div class="fade">
+    <br><br><br><br>
+    <div onclick="toggleBonus()">
+      <a style="cursor:pointer;" class="btn btna--s btn--shadow">おまけ</a>
+    </div>
+  </div>
+
+  <div id="A00">
+    <img src="../../images/lp_world/e_ed2.png" alt="">
+    <br>
+
+    <div id="book">
+      <div class="bookpage active">
+        <img src="../../images/lp_world/lpwe_p1.jpg" alt="">
+      </div>
+
+      <div class="bookpage">
+        <img src="../../images/lp_world/lpwe_p2.png" alt="">
+      </div>
+
+      <div class="bookpage">
+        <img src="../../images/lp_world/lpwe_p3.png" alt="">
+      </div>
+
+      <div class="bookpage">
+        <img src="../../images/lp_world/lpwe_p4v2.png" alt="">
+      </div>
+
+      <div class="bookpage">
+        <img src="../../images/lp_world/lpwe_p5v2.png" alt="">
+      </div>
+
+      <div class="bookpage">
+        <img src="../../images/lp_world/lpwe_p6v2.png" alt="">
+      </div>
+
+      <div class="bookpage">
+        <img src="../../images/lp_world/lpwe_p7v2.png" alt="">
+      </div>
+
+      <div class="bookpage">
+        <img src="../../images/lp_world/lpwe_p8v2.png" alt="">
+      </div>
+
+      <div class="bookpage">
+        <img src="../../images/lp_world/lpwe_p9v2.png" alt="">
+      </div>
+
+      <div class="bookpage">
+        <img src="../../images/lp_world/lpwe_p10v2.png" alt="">
+      </div>
+
+      <div class="bookpage">
+        <img src="../../images/lp_world/lpwe_p11.png" alt="">
+      </div>
+
+      <div class="bookpage">
+        <img src="../../images/lp_world/lpwe_p12.jpg" alt="">
+      </div>
+
+      <div class="arrowrow">
+        <div id="bookprev" class="arrows">＜</div>
+        <div id="booknext" class="arrows">＞</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+function toggleBonus(){
+  const bonus = document.getElementById('A00');
+  bonus.style.display = bonus.style.display === 'block' ? 'none' : 'block';
+}
+
+const pages = document.querySelectorAll('.bookpage');
+let currentPage = 0;
+
+function showPage(index){
+  pages.forEach((page, i) => {
+    page.classList.toggle('active', i === index);
+  });
+}
+
+document.getElementById('bookprev').addEventListener('click', () => {
+  currentPage = currentPage === 0 ? pages.length - 1 : currentPage - 1;
+  showPage(currentPage);
+});
+
+document.getElementById('booknext').addEventListener('click', () => {
+  currentPage = currentPage === pages.length - 1 ? 0 : currentPage + 1;
+  showPage(currentPage);
+});
+</script>
+
+</body>
+</html>
