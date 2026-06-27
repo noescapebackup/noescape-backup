@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>STAGE4</title>
 
 <style>
 html,body{
     margin:0;
+    padding:0;
     background:#061428 url('../../images/lp_world/lpwop_backg.jpg') center/cover fixed no-repeat;
     text-align:center;
     font-family:sans-serif;
@@ -18,24 +18,43 @@ img{
     max-width:100%;
     height:auto;
     display:block;
-    margin:auto;
+    margin:0 auto;
+}
+
+.fade{
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeIn 1.2s forwards;
+}
+
+.fade:nth-of-type(1){animation-delay:.2s;}
+.fade:nth-of-type(2){animation-delay:.5s;}
+.fade:nth-of-type(3){animation-delay:.8s;}
+.fade:nth-of-type(4){animation-delay:1.1s;}
+
+@keyframes fadeIn{
+to{
+opacity:1;
+transform:none;
+}
 }
 
 .glitch{
     position:relative;
-    display:inline-block;
+    display:block;
+    width:fit-content;
+    margin:0 auto;
 }
 
 .normal{
-    position:relative;
+    display:block;
 }
 
 .bug{
     position:absolute;
-    left:0;
-    top:0;
+    inset:0;
     opacity:0;
-    transition:.15s;
+    transition:.08s;
 }
 
 .glitch.is-bug .bug{
@@ -46,34 +65,15 @@ img{
     opacity:0;
 }
 
-.fade{
-    opacity:0;
-    transform:translateY(25px);
-    animation:fade .8s forwards;
-}
-
-.fade:nth-child(1){animation-delay:.2s;}
-.fade:nth-child(2){animation-delay:.5s;}
-.fade:nth-child(3){animation-delay:.8s;}
-.fade:nth-child(4){animation-delay:1.1s;}
-.fade:nth-child(5){animation-delay:1.4s;}
-
-@keyframes fade{
-to{
-opacity:1;
-transform:none;
-}
-}
-
 .tsuzuki{
     display:inline-block;
-    margin:30px auto;
-    padding:10px 30px;
-    background:#666;
+    margin:40px auto;
+    padding:12px 30px;
+    border-radius:5px;
     color:#fff;
-    text-decoration:none;
-    border-radius:6px;
+    background:#666;
     border-bottom:5px solid #464646;
+    text-decoration:none;
     font-weight:bold;
 }
 
@@ -81,7 +81,6 @@ transform:none;
     border-bottom:2px solid #464646;
 }
 </style>
-
 </head>
 
 <body>
@@ -90,7 +89,9 @@ transform:none;
 <img src="../../images/lp_world/lwN_time70.png">
 </div>
 
-<div class="glitch" id="switchline">
+<div class="fade">
+
+<div class="glitch">
 <img class="bug" src="../../images/lp_world/lwN_L1.jpg">
 <img class="normal" src="../../images/lp_world/lwN_LR1.jpg">
 </div>
@@ -108,6 +109,8 @@ transform:none;
 <div class="glitch">
 <img class="bug" src="../../images/lp_world/lwN_L4v2.png">
 <img class="normal" src="../../images/lp_world/lwN_LR4.png">
+</div>
+
 </div>
 
 <br><br><br>
@@ -128,6 +131,8 @@ transform:none;
 次へ
 </a>
 
+<br><br><br>
+
 <script>
 
 const glitches=document.querySelectorAll(".glitch");
@@ -136,15 +141,15 @@ setInterval(()=>{
 
 glitches.forEach(g=>g.classList.remove("is-bug"));
 
-const random=Math.floor(Math.random()*glitches.length);
+const index=Math.floor(Math.random()*glitches.length);
 
-glitches[random].classList.add("is-bug");
+glitches[index].classList.add("is-bug");
 
 setTimeout(()=>{
-glitches[random].classList.remove("is-bug");
+glitches[index].classList.remove("is-bug");
 },120);
 
-},1200);
+},900);
 
 </script>
 
