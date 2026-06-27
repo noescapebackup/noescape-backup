@@ -53,18 +53,12 @@ img{
 <button type="button" class="ansbutton" id="button1">解　答</button>
 
 <script>
-document.getElementById("button1").addEventListener("click", function(){
+document.getElementById("button1").addEventListener("click", function () {
   const ans = document.getElementById("form1").value.trim();
 
-  if(ans === "しんこう"){
-    location.href = "../st_1/";
-  }else if(ans === "ふんすい" || ans === "噴水"){
-    location.href = "../st_2/";
-  }else if(ans === "ちくさん" || ans === "畜産"){
+  if (ans === "いらっしゃいませ") {
     location.href = "../st_3/";
-  }else if(ans === "いらっしゃいませ"){
-    location.href = "../st_4/";
-  }else{
+  } else {
     alert("不正解");
   }
 });
