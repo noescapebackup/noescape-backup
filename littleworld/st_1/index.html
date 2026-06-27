@@ -6,81 +6,90 @@
 <title>STAGE1</title>
 
 <style>
-body{
-    margin:0;
-    text-align:center;
-    font-family:sans-serif;
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: #061428 url('../../images/lp_world/lpwop_backg.jpg') center/cover fixed no-repeat;
+  font-family: sans-serif;
+  text-align: center;
 }
 
-.wrap{
-    position:fixed;
-    inset:0;
-    z-index:-1;
-    background:url('../images/lp_world/lpwop_backg.jpg') center/cover no-repeat;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 24px;
 }
 
-img{
-    max-width:100%;
-    height:auto;
-    display:block;
-    margin:auto;
+p {
+  color: white;
 }
 
-.btn{
-    display:inline-block;
-    padding:10px 18px;
-    background:#6a5acd;
-    color:#fff;
-    border-radius:6px;
-    border-bottom:5px solid #4a3aad;
-    cursor:pointer;
-    text-decoration:none;
-    font-weight:bold;
+.btn {
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 8px 18px;
+  font-size: 16px;
+  line-height: 1.7;
+  border-radius: 4px;
+  user-select: none;
+  text-decoration: none;
 }
 
-.next{
-    display:inline-block;
-    margin-top:40px;
-    padding:14px 30px;
-    background:#fff;
-    color:#000;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
+.btnc--s {
+  color: #fff;
+  background-color: #6a5acd;
+  border-bottom: 5px solid #4a3aad;
+}
+
+.btnc--s:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #6a5acd;
+  border-bottom: 2px solid #4a3aad;
+}
+
+.next {
+  display: inline-block;
+  margin: 40px auto;
+  padding: 14px 28px;
+  background: #fff;
+  color: #000;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="wrap"></div>
-
-<img src="../images/lp_world/lwN_1-1.png">
-
-<img src="../images/lp_world/lwN_1-23.png">
+<img src="../../images/lp_world/lwN_1-1.png">
+<img src="../../images/lp_world/lwN_1-23.png">
 
 <br>
 
 <div onclick="toggleMap()">
-<a class="btn">大まかな異変の位置を見る</a>
+  <a class="btn btnc--s">大まかな異変の位置を見る</a>
 </div>
 
-<div id="A100" style="display:none;">
-<br>
-<img src="../images/lp_world/lwN_ichi3.png">
+<div id="A100" style="display:none;clear:both;">
+  <br>
+  <img src="../../images/lp_world/lwN_ichi3.png">
 </div>
 
 <br><br>
 
-<a class="next" href="../st_2/">
-指示通りに移動したら次へ
-</a>
+<a class="next" href="../st_2/">指示通りに移動したら次へ</a>
 
 <script>
 function toggleMap(){
-    const obj=document.getElementById("A100");
-    obj.style.display=obj.style.display==="block"?"none":"block";
+  const obj = document.getElementById("A100");
+  obj.style.display = obj.style.display === "block" ? "none" : "block";
 }
 </script>
 
