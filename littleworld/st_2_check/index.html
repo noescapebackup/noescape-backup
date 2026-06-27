@@ -49,29 +49,63 @@ img{
 
 <img src="../../images/lp_world/lwN_form2.png" alt="">
 
-<input type="text" class="txt" id="form1" placeholder="解答入力"><br>
-<button type="button" class="ansbutton" id="button1">解　答</button>
+<input
+  type="text"
+  class="txt"
+  id="form1"
+  placeholder="解答入力"
+><br>
+
+<button
+  type="button"
+  class="ansbutton"
+  id="button1"
+>
+  解　答
+</button>
 
 <script>
 
-document.getElementById("button1").addEventListener("click", function () {
-  const ans = document.getElementById("form1").value
+const input = document.getElementById("form1");
+const button = document.getElementById("button1");
+
+function showCorrect(url){
+  alert("正解！");
+  location.href = url;
+}
+
+button.addEventListener("click", function () {
+
+  const ans = input.value
     .trim()
-    .replace(/\s/g, "");
+    .replace(/\s/g,"");
 
+  // 通常ルート
   if (ans === "いらっしゃいませ") {
-    location.href = "../st_3/";
+    showCorrect("../st_3/");
+    return;
+  }
 
-  } else if (
+  // 一心同体ルート
+  if (
     ans === "一心同体" ||
     ans === "いっしんどうたい"
   ) {
-    location.href = "../st_2_isshin/";
+    showCorrect("../st_2_isshin/");
+    return;
+  }
 
-  } else {
-    alert("不正解");
+  alert("不正解");
+});
+
+// Enterキーでも回答
+input.addEventListener("keydown", function(e){
+  if(e.key === "Enter"){
+    button.click();
   }
 });
+
+</script>
 
 </body>
 </html>
