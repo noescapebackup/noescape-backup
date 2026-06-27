@@ -1,1 +1,236 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>リトルパラレルワールド 初級 TOP</title>
+  <style>
 
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px 12px 80px;
+  background: #111;
+  color: white;
+  font-family: sans-serif;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.wrap {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background-image: url('../../images/lp_world/lpwop_backg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 24px;
+}
+
+p {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.btna--s {
+  font-weight: bold;
+  color: #fff;
+  background-color: #860000;
+  border-bottom: 5px solid #660000;
+}
+
+.btna--s:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #860000;
+  border-bottom: 2px solid #660000;
+  font-weight: bold;
+}
+
+.btnb--s {
+  font-weight: bold;
+  color: #fff;
+  background-color: #a0522d;
+  border-bottom: 5px solid #80320d;
+  margin-left: 5px;
+}
+
+.btnb--s:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #a0522d;
+  border-bottom: 2px solid #80320d;
+  font-weight: bold;
+}
+
+.btnc--s {
+  font-weight: bold;
+  color: #fff;
+  background-color: #cd853f;
+  border-bottom: 5px solid #ad651f;
+  margin-left: 10px;
+}
+
+.btnc--s:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #cd853f;
+  border-bottom: 2px solid #ad651f;
+  font-weight: bold;
+}
+
+.btnd--s {
+  font-weight: bold;
+  color: #fff;
+  background-color: #009999;
+  border-bottom: 5px solid #007979;
+  margin-left: 15px;
+}
+
+.btnd--s:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #009999;
+  border-bottom: 2px solid #007979;
+  font-weight: bold;
+}
+
+#answer {
+  color: yellow;
+  font-weight: bold;
+}
+
+.btnz--s {
+  font-weight: bold;
+  color: #000;
+  background-color: #ffff00;
+  border-bottom: 5px solid #dfdf00;
+  margin-left: 15px;
+}
+
+.btnz--s:hover {
+  margin-top: 3px;
+  color: #000;
+  background: #ffff00;
+  border-bottom: 2px solid #dfdf00;
+  font-weight: bold;
+}
+
+div[id^="A"] {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  </style>
+</head>
+<body>
+  <main>
+<div class="wrap"></div>
+
+<center>
+
+<img src="../../images/lp_world/e_op1.png">
+<img src="../../images/lp_world/e_op2v3.png">
+</center>
+<div onclick="obj=document.getElementById('A00').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btna--s btn--shadow">スタートパネルの問題</a></div><p></p><div id="A00" style="display:none;clear:both;"><p></p>
+<div onclick="obj=document.getElementById('A10').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント１</a></div><p></p><div id="A10" style="display:none;clear:both;"><p>&#x22A0;にはそれぞれ漢字が当てはまる。<br>上下に書かれた文字の法則から、３か所の&#x22A0;の中身を考えよう。<br>全ての&#x22A0;に入る文字を導く必要はなさそうだ。</p>
+<div onclick="obj=document.getElementById('A20').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント2</a></div><p></p><div id="A20" style="display:none;clear:both;"><p>一番左の&#x22A0;と、右から2番目の&#x22A0;は、上下に書かれた文字のようなものをよく観察し、順番に変換して漢字を作ろう。<br><br>真ん中の&#x22A0;は、「左」の対義語を考えよう。<br>ただ、この「左」は上の線が欠けている。<br>対義語となる漢字も同様に線を欠けさせると、またさらに別の漢字に変化する。<br><br>わかったらMAPを見て行くべき場所を探そう。</p>
+<div onclick="obj=document.getElementById('A30').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnz--s btn--shadow">答え</a></div><p></p><div id="A30" style="display:none;clear:both;"><p>一番左の&#x22A0;は、カタカナが五十音順、漢字は小学校、中学校、高校、大学と学校の頭文字をとっており、&#x22A0;の部分に入るカタカナと漢字を組み合わせると「沖」。<br>真ん中の&#x22A0;は、「左」の対義語として「右」が入るが、漢字の上の部分が欠けているので、同様に上の部分を欠けさせて「石」。<br>右から２番目の&#x22A0;は、漢数字は１つずつ増えてゆき、月などの漢字は曜日の順で変化しているので、当てはまるものを組み合わせると「垣」。<br><br>よって、「沖？？　石垣？の家」と漢字が埋まり、これと条件が合う場所は<span id="answer">「沖縄県　石垣島の家」</span>となる。</p></div></div></div></div>
+<div onclick="obj=document.getElementById('A40').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btna--s btn--shadow">第２のスタンプの場所</a></div><p></p><div id="A40" style="display:none;clear:both;"><p></p>
+<div onclick="obj=document.getElementById('A50').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント１</a></div><p></p><div id="A50" style="display:none;clear:both;"><p>色がついた丸には、それぞれカタカナが１文字ずつ入る。<br>上側の式は、先ほど押したスタンプと同じ枠なので、スタンプが表す内容を考えよう。<br>写真で隠されてしまっているが、下側の式と比較すると紫とオレンジの丸の間にも何か１文字入りそうだ。<br><br>下側の式には沖縄でよく見かける、魔よけの像の名前が入る。</p>
+<div onclick="obj=document.getElementById('A60').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント2</a></div><p></p><div id="A60" style="display:none;clear:both;"><p>スタンプの形をよく見ると、アルファベットでEP（イーピー）と書かれている。<br>よって、紫の丸はイ、オレンジの丸にはもともと半濁点が書かれているので、ヒが対応する。<br>間には「ー（伸ばし棒）」が入り、文字数的にも問題なさそうだ。<br><br>また、下側の式の写真はシーサーなので、青の丸にはシ、緑の丸にはサが対応する。<br>これを踏まえて、五十音表をもとに波線の言葉を考えよう。</p>
+<div onclick="obj=document.getElementById('A70').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント３</a></div><p></p><div id="A70" style="display:none;clear:both;"><p>五十音表の位置に注目し、矢印に従って文字を別のものに変換すると、言葉が出来上がる。<br>オレンジの丸の上には横棒が書き足されているので、変換したのちに横棒と組み合わせてカタカナにしよう。</p>
+<div onclick="obj=document.getElementById('A80').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnz--s btn--shadow">答え</a></div><p></p><div id="A80" style="display:none;clear:both;"><p>矢印は五十音表を見たときに、その方向の１つ隣にある文字に変えることを表す。<br>例えば、紫の丸には上矢印がついているので、五十音表でイの上にある文字「ア」が入る。<br>またオレンジの丸も同様の変換をすると「フ」となるが、丸の上の横棒と組み合わせて「ラ」となる。<br><br>同様の変換をほかの丸でも行うと、答えは「アラスカ」となる。<br>次は<span id="answer">「アラスカ　トリンギットの家」</span>に向かおう。</p></div></div></div></div></div>
+<div onclick="obj=document.getElementById('A90').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btna--s btn--shadow">第３のスタンプの場所</a></div><p></p><div id="A90" style="display:none;clear:both;"><p></p>
+<div onclick="obj=document.getElementById('A100').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント</a></div><p></p><div id="A100" style="display:none;clear:both;"><p>まずは正しい向きに気を付けて、ページ内の赤い三角がついた枠にだけスタンプを押そう。<br>その後、青いウィンドウの下に現れた漢数字を読もう。</p>
+<div onclick="obj=document.getElementById('A110').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnz--s btn--shadow">答え</a></div><p></p><div id="A110" style="display:none;clear:both;"><p>正しく押すとこのようになり、漢数字の十二が現れる。<br><img src="../../images/lp_world/p4v3.png"><br><br>MAPで１２番の場所は<span id="answer">「ポリネシア　サモアの家」</span>なので、そこに向かおう。</p></div></div></div>
+<div onclick="obj=document.getElementById('A120').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btna--s btn--shadow">第４のスタンプの場所</a></div><p></p><div id="A120" style="display:none;clear:both;"><p></p>
+<div onclick="obj=document.getElementById('A130').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント１</a></div><p></p><div id="A130" style="display:none;clear:both;"><p>大きくなってしまった文字を読むと、次に向かう場所は「ドイツのエリア」であることがわかる。<br>また、「５つの色の順」や「かかれている文字」という内容から、「文字を何かの色の順で読む」と追加で情報が得られそうだ。</p>
+<div onclick="obj=document.getElementById('A140').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント２</a></div><p></p><div id="A140" style="display:none;clear:both;"><p>大きくなった文字の背景に目を移すと、さまざまな色の丸と重なっている文字がある。<br>順番を考えて読んでいこう。</p>
+<div onclick="obj=document.getElementById('A150').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント３</a></div><p></p><div id="A150" style="display:none;clear:both;"><p>色の順番はページ下に見切れている情報を使おう。<br>色丸と矢印が並んでいると考えられるが、３つ目以降は何色になるだろうか…？</p>
+<div onclick="obj=document.getElementById('A160').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnz--s btn--shadow">答え</a></div><p></p><div id="A160" style="display:none;clear:both;"><p>３つ目の枠は先ほど押したスタンプと同じ枠なので、緑の丸が入る。<br>右下に見切れた灰色が４つ目の色丸の一部だと考えれば、消去法でこれまで登場しなかった黄色の丸が５つ目だとわかる。<br>よって、赤→青→緑→灰→黄の順で重なった文字を読むと、「礼はいどう」（礼拝堂）となる。<br>ドイツの礼拝堂をMAPで探すと、<span id="answer">「ドイツ　聖ゲオルグ礼拝堂」</span>があるので、そこへ向かおう。</p></div></div></div></div></div>
+<div onclick="obj=document.getElementById('A170').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btna--s btn--shadow">第５のスタンプの場所</a></div><p></p><div id="A170" style="display:none;clear:both;"><p></p>
+<div onclick="obj=document.getElementById('A180').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント１</a></div><p></p><div id="A180" style="display:none;clear:both;"><p>まずはスタンプを自分で枠内に書き写そう。<br>問題文の言葉を文脈が通るように並べると、<br>「このスタンプのマークは、<br>日本語で？？？？？英語に変換すると、？？？の形を表している。<br><span style="background-color:#0000FF">→</span><span style="background-color:#FF0000">→</span>が示す建物の中に入ろう。」<br>となる。<br><br>このスタンプとは、今書き写した第４のスタンプの形のことだ。<br>日本語と英語でそれぞれ何と言うか考えよう。</p>
+<div onclick="obj=document.getElementById('A190').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント２</a></div><p></p><div id="A190" style="display:none;clear:both;"><p>スタンプのマークは、日本語でじゅうじか(十字架)、英語でクロス（cross)と呼ぶ。<br>青と赤の矢印が通っている場所を読むと、「クロスうじ」（黒数字）となる。<br>黒数字とはなんだろうか。<br>ページ内をよく探してみよう。</p>
+<div onclick="obj=document.getElementById('A200').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント３</a></div><p></p><div id="A200" style="display:none;clear:both;"><p>スタンプ枠の右の文章をよく読むと、ところどころ文字が数字に変わってしまっているようだ。<br>変わってしまった文字がもともと何だったかを文脈から推測し、青いウィンドウの空欄に記入していこう。</p>
+<div onclick="obj=document.getElementById('A210').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnz--s btn--shadow">答え</a></div><p></p><div id="A210" style="display:none;clear:both;"><p>答えは<span id="answer">アフリカンプラザ</span>となる。</p>
+<div onclick="obj=document.getElementById('A220').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnd--s btn--shadow">補足（正しい文章）</a></div><p></p><div id="A220" style="display:none;clear:both;"><p>ゲオルグはローマ帝国の軍人で、キリスト教迫害に抵抗して処刑され、キリスト教の最高殉教者としてあがめられています。<br>この礼拝堂はバロック初期の建築様式をもち、天井には聖母マリアやキリストのフレスコ画が描かれています。<br>またパイプオルガンも設置されており、実際に演奏した音源をBGMとして聴くことができます。</p></div></div></div></div></div></div>
+<div onclick="obj=document.getElementById('A230').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btna--s btn--shadow">第６のスタンプの場所</a></div><p></p><div id="A230" style="display:none;clear:both;"><p></p>
+<div onclick="obj=document.getElementById('A240').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント１</a></div><p></p><div id="A240" style="display:none;clear:both;"><p>正しくスタンプを押すとこのようになる。<br><img src="../../images/lp_world/lpwe_5h.jpg"><br><br>落下してしまった問題文から、この図はボードゲームの道具を表しているとわかる。<br>スタンプ台のすぐ右にある展示物を見て、当てはまる名称を落下した問題文の中の空欄に当てはめよう。</p>
+<div onclick="obj=document.getElementById('A241').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント２</a></div><p></p><div id="A241" style="display:none;clear:both;"><p>４種類の呼び名があるようだが、そのうち２つは落下した文中に書かれているようだ。</p>
+<div onclick="obj=document.getElementById('A250').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント３</a></div><p></p><div id="A250" style="display:none;clear:both;"><p>同じ柄の枠には、同じ文字が入ると考えよう。<br>一番下の枠は首都の名前となるので、どこの国の首都か調べよう。</p>
+<div onclick="obj=document.getElementById('A260').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnz--s btn--shadow">答え</a></div><p></p><div id="A260" style="display:none;clear:both;"><p>文字数や小さい文字の位置などを考えると、青い水玉の空欄は「マンカラ」、赤い縞模様の空欄には「アウェレ」が入る。<br>これを組み合わせると、下の空欄は「アンカラ」となり、これはトルコの首都だとわかる。<br><br>よって次に向かうべきは、<span id="answer">「トルコ　イスタンブールの街」</span>だ。<br>ページ一番下の指示を解読すると、<span id="answer">「イスラーム学院」の、イスラム文化紹介コーナー</span>で次のスタンプを押す指示があるので、そこに向かおう。</p></div></div></div></div></div>
+<div onclick="obj=document.getElementById('A270').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btna--s btn--shadow">第７のスタンプの場所</a></div><p></p><div id="A270" style="display:none;clear:both;"><p></p>
+<div onclick="obj=document.getElementById('A280').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント１</a></div><p></p><div id="A280" style="display:none;clear:both;"><p>まずはスタンプを自分で枠内に書き写そう。<br>このスタンプが何を表しているかは、青いウィンドウのすぐ左側の説明文中に、漢字２文字で書かれている。</p>
+<div onclick="obj=document.getElementById('A290').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント２</a></div><p></p><div id="A290" style="display:none;clear:both;"><p>このスタンプは「目玉」を表している。<br>問題の赤枠の中で「目」「玉」を２個探し、同じ漢字同士の間にある文字を読もう。</p>
+<div onclick="obj=document.getElementById('A300').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント３</a></div><p></p><div id="A300" style="display:none;clear:both;"><p>２個ある「玉」のうち１つは、何かの一部として赤枠の中に存在している。<br>また、「目」も１つは漢字としてではなく、別のものとして表記されている。</p>
+<div onclick="obj=document.getElementById('A310').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnz--s btn--shadow">答え</a></div><p></p><div id="A310" style="display:none;clear:both;"><p>「玉」は「国」の漢字の一部、「目」は本来使われるはずだった漢数字の二を四角で囲った図形を使う。<br>同じ漢字同士の間を読むと、<span id="answer">「韓国　農家」</span>となるので、そこへ向かおう。<br><br><img src="../../images/lp_world/lpwe_6h.jpg"><br><br></p></div></div></div></div></div>
+<div onclick="obj=document.getElementById('A320').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btna--s btn--shadow">第８のスタンプの場所</a></div><p></p><div id="A320" style="display:none;clear:both;"><p></p>
+<div onclick="obj=document.getElementById('A330').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント１</a></div><p></p><div id="A330" style="display:none;clear:both;"><p>何とか読めそうな部分を探すと、<br>「MAP上に２つずつ」<br>「スタンプと同じ形」<br>「線で結ぼう」<br>「３文字のカタカナ」<br>と断片的な情報が手に入る。<br>ここから何をするか推測しよう。</p>
+<div onclick="obj=document.getElementById('A340').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント２</a></div><p></p><div id="A340" style="display:none;clear:both;"><p>MAP上とあるので実際にMAPを確認すると、今まで押した７種類のスタンプと同じ形のマークがそれぞれ２個ずつある。<br>これを線でつないでみよう。</p>
+<div onclick="obj=document.getElementById('A350').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">ヒント３</a></div><p></p><div id="A350" style="display:none;clear:both;"><p>線でつなぐと、このように「トケイ」と文字が現れる。<br><img src="../../images/lp_world/lpwe_7h.jpg"><br><br>MAP上にトケイ（時計）があるはずだ。</p>
+<div onclick="obj=document.getElementById('A360').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnz--s btn--shadow">答え</a></div><p></p><div id="A360" style="display:none;clear:both;"><p>本館２階のMAPに、時計のマークがついている。<br>MAPで示された場所へ向かおう。</p></div></div></div></div></div>
+<div onclick="obj=document.getElementById('A370').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btna--s btn--shadow">クリアキーワードの導き方</a></div><p></p><div id="A370" style="display:none;clear:both;"><p></p>
+<div onclick="obj=document.getElementById('A380').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">マークを3つ作る方法</a></div><p></p><div id="A380" style="display:none;clear:both;"><p></p>
+<div onclick="obj=document.getElementById('A381').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnc--s btn--shadow">ヒント１</a></div><p></p><div id="A381" style="display:none;clear:both;"><p>第８のスタンプはパネルのバグなどで形がわからなくなっており、推測する必要がある。<br>パネルの吹き出しの情報から考えよう。</p>
+<div onclick="obj=document.getElementById('A390').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnc--s btn--shadow">ヒント２</a></div><p></p><div id="A390" style="display:none;clear:both;"><p>作るべきマークは「鳩」だ。<br>持っているキットをよく探して、鳩を３つ作れそうなものを探そう。</p>
+<div onclick="obj=document.getElementById('A400').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnc--s btn--shadow">ヒント３</a></div><p></p><div id="A400" style="display:none;clear:both;"><p>MAPを見ると、裏表に鳩の断片がある。<br>紙を折りながら鳩を3つ作ると、どこかに指示文が出てくるはずだ。</p>
+<div onclick="obj=document.getElementById('A410').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnz--s btn--shadow">答え</a></div><p></p><div id="A410" style="display:none;clear:both;"><p>このように折ると、鳩を3つ作ることができる。<br><img src="../../images/lp_world/lpwe_8h.png"><br><br>MAP上に<span id="answer">「エラーをウェブページ上で長オシ」</span>と指示文が出ている。<br>実際に指示に従おう。</p></div></div></div></div></div>
+<div onclick="obj=document.getElementById('A420').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">マークを3つ作った後の指示文</a></div><p></p><div id="A420" style="display:none;clear:both;"><p></p>
+<div onclick="obj=document.getElementById('A430').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnc--s btn--shadow">ヒント１</a></div><p></p><div id="A430" style="display:none;clear:both;"><p>MAPのウェブページに移動し、予期せぬエラーの「エラー」という文字を長押ししよう。<br>ポップアップが出てくるのでその指示に従おう。</p>
+<div onclick="obj=document.getElementById('A440').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnc--s btn--shadow">ヒント２</a></div><p></p><div id="A440" style="display:none;clear:both;"><p>ポップアップの①の指示に従うとこのようになる。<br><img src="../../images/lp_world/lpwe_lh0.png"><br><br>その後、このスタンプラリー内で見たエラーの順にカーソルを合わせ、同じ色の矢印の先を読んでいこう。<br>例えば黒い×に、第２のスタンプのページにある黒いカーソルを合わせると、黒い矢印はスタンプの2本の青い線と、2つの丸で構成された「ブ」というカタカナを指す。<br><br>これを繰り返してキーワードを導こう。</p>
+<div onclick="obj=document.getElementById('A450').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnc--s btn--shadow">ヒント３</a></div><p></p><div id="A450" style="display:none;clear:both;"><p>冊子を折っていくと、以下のように「文化交流」（ブンカコウリュウ）とキーワードが浮かぶ。</p><br>
+<center><img src="../../images/lp_world/lpwe_lh2v3.png"><br>
+<img src="../../images/lp_world/lpwe_lh3v3.png"><br><br>
+<img src="../../images/lp_world/lpwe_lh4.png"><br><br>
+<img src="../../images/lp_world/lpwe_lh5.png"><br><br>
+<img src="../../images/lp_world/lpwe_lh6.png"><br><br>
+<img src="../../images/lp_world/lpwe_lh7.jpg">
+</center><br><br><p>しかし、このキーワードは8文字しかない。<br>クリアキーワードは9文字あるはずだが、どこかに見落としたエラーはないだろうか…？</p>
+<div onclick="obj=document.getElementById('A460').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnc--s btn--shadow">ヒント４</a></div><p></p><div id="A460" style="display:none;clear:both;"><p>×の付いた青いウィンドウは、手元のキットにはそれ以上どこにもなさそうだ。<br>手元のキットではないとすると…？<br>今までのことをよく思い返そう。</p>
+<div onclick="obj=document.getElementById('A461').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnc--s btn--shadow">ヒント５</a></div><p></p><div id="A461" style="display:none;clear:both;"><p>スタンプラリーの一番最初に見たスタートパネルを確認するとエラーが表示されており、赤色の×がついていた。<br>赤色のカーソルと矢印を見つけて、パネルに合わせに行こう。</p>
+<div onclick="obj=document.getElementById('A470').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnz--s btn--shadow">答え</a></div><p></p><div id="A470" style="display:none;clear:both;"><p>赤いカーソルは、①の指示で冊子を折った際に出来上がっていた。<br>実際に冊子とパネルを合わせると、一番最初のページにある矢印は「い」を指す。<br><img src="../../images/lp_world/lpwe_lh1.png"><br><br>よってこれがキーワードの一番最初の文字になるので、答えは<span id="answer">「異文化交流」</span>。</p></div></div></div></div></div></div></div>
+<div onclick="obj=document.getElementById('A480').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnb--s btn--shadow">クリアキーワードをWEBサイトに報告した後</a></div><p></p><div id="A480" style="display:none;clear:both;"><p></p>
+<div onclick="obj=document.getElementById('A481').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnc--s btn--shadow">ヒント１</a></div><p></p><div id="A481" style="display:none;clear:both;"><p>まずは地図の「！」が示す場所で追加キットを入手しよう。<br>パラレルワールドから脱出するための手がかりが手に入る。</p>
+<div onclick="obj=document.getElementById('A490').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnc--s btn--shadow">ヒント２</a></div><p></p><div id="A490" style="display:none;clear:both;"><p>手がかりを読むと、ただキーワードを報告するだけでは脱出できないようだ。<br>冊子に描かれている報告欄の枠線、字体などの細かい特徴に着目し、同じものが冊子以外の紙に無いか探してみよう。</p>
+<div onclick="obj=document.getElementById('A500').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnc--s btn--shadow">ヒント３</a></div><p></p><div id="A500" style="display:none;clear:both;"><p>MAPの裏面を見ると、参加特典やルールについて記載のある部分の枠線が報告欄と同じ枠線となっており、参加特典の説明に「クリア」「キーワード」という単語も使われている。<br><br>うまく紙を折って報告欄と同じようなものを作れそうだ。<br>冊子と見比べながら紙を折ろう。</p>
+<div onclick="obj=document.getElementById('A510').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnc--s btn--shadow">ヒント４</a></div><p></p><div id="A510" style="display:none;clear:both;"><p>実際に折るとこのようになる。<br><img src="../../images/lp_world/lpwe_lh10.png"><br><br>しかし、右側の「印」がまだ足りていない。<br>どうにかしてこれを補えないだろうか…</p>
+<div onclick="obj=document.getElementById('A520').style; obj.display=(obj.display=='none')?'block':'none';"><a style="cursor:pointer;" class="btn btnz--s btn--shadow">答え</a></div><p></p><div id="A520" style="display:none;clear:both;"><p>「印」は第１のスタンプと同じ形になっていた。<br>実際に<span id="answer">「沖縄　石垣島の家」でスタンプを押して解答欄を完成させたのち、クリアキーワード「異文化交流」と書いて総合案内所に提出</span>しよう。</p></div></div></div></div></div></div></div>
+
+  </main>
+</body>
+</html>
