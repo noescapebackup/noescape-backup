@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>リトルパラレルワールド 上級編 CLEAR</title>
+  <style>
+    body {
+      margin: 0;
+      background: #061428;
+      color: #fff;
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 12px 120px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 24px;
+      pointer-events: none;
+    }
+
+    a img {
+      pointer-events: auto;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeInUp 1.4s ease forwards;
+    }
+
+    .fade:nth-child(1) { animation-delay: 0s; }
+    .fade:nth-child(2) { animation-delay: .4s; }
+    .fade:nth-child(3) { animation-delay: .8s; }
+    .fade:nth-child(4) { animation-delay: 1.2s; }
+    .fade:nth-child(5) { animation-delay: 1.6s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .spacer-100 {
+      height: 100px;
+    }
+
+    .spacer-300 {
+      height: 300px;
+    }
+
+    .tap-button {
+      cursor: pointer;
+      display: inline-block;
+      animation: pulse 1.6s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    #clue {
+      display: none;
+      clear: both;
+    }
+
+    #dlue {
+      display: block;
+      clear: both;
+    }
+
+    .exnext {
+      display: inline-block;
+      margin: 24px auto;
+      padding: 16px 28px;
+      background: #fff;
+      color: #061428;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    #exansform {
+      margin: 40px auto 0;
+      padding: 24px 16px;
+      max-width: 520px;
+      background: rgba(255,255,255,.92);
+      color: #111;
+      border-radius: 16px;
+      box-sizing: border-box;
+      line-height: 1.8;
+      font-weight: bold;
+    }
+
+    .txt {
+      width: 80%;
+      max-width: 320px;
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: 1px solid #aaa;
+      text-align: center;
+    }
+
+    .exansbutton {
+      margin-top: 16px !important;
+      padding: 12px 32px;
+      border: none;
+      border-radius: 999px;
+      background: #061428;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <div class="fade">
+      <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_ed03.png">
+    </div>
+
+    <div class="fade">
+      <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_ed14.png">
+    </div>
+
+    <div class="fade">
+      <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_ed23.png">
+    </div>
+
+    <div class="fade">
+      <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_ed33-1.png">
+    </div>
+
+    <div class="fade">
+      <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_ed43.png">
+    </div>
+
+    <a href="https://twitter.com/intent/tweet?text=%E3%80%90%E3%83%AA%E3%83%88%E3%83%AB%E3%83%91%E3%83%A9%E3%83%AC%E3%83%AB%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%80%91%0A%E4%B8%8A%E7%B4%9A%E7%B7%A8%E3%80%80%E3%83%AA%E3%82%A2%E3%83%AB%E8%AC%8E%E8%A7%A3%E3%81%8D%E3%82%B2%E3%83%B1%E3%83%A0%E3%80%80%E5%9B%9E%E9%81%8A%E5%AE%8C%E4%BA%86%0A%0A%23%E3%83%AA%E3%83%88%E3%83%AB%E3%83%91%E3%83%A9%E3%83%AC%E3%83%AB%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%80%80%23%E3%83%AA%E3%83%88%E3%83%AB%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E8%AC%8E%E3%80%80%23%E7%95%B0%E5%A4%89%E5%9B%9E%E9%81%8A%E3%80%80%23NoEscape%E8%84%B1%E5%87%BA%0A%0Ahttps%3A%2F%2Fx.com%2FNoEscape_game%2Fstatus%2F2029508469347520807%3Fs%3D20" target="_blank" rel="noopener noreferrer">
+      <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_Xbu1.jpg">
+    </a>
+
+    <div class="spacer-100"></div>
+
+    <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_yav2.png">
+
+    <div class="tap-button" onclick="toggleClue()">
+      <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_exbu3.png">
+    </div>
+
+    <div id="clue">
+      <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_ex_ent3.png">
+      <br><br>
+      <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_ex_ent23.png">
+      <br><br>
+      <a class="exnext" href="https://noescape.co.jp/nazomemo/lp_world/ex1/" target="_blank" rel="noopener noreferrer">
+        エクストラストーリーへ
+      </a>
+    </div>
+
+    <div class="spacer-300"></div>
+
+    <div id="dlue">
+      <img src="https://noescape.co.jp/nazomemo/wp-content/uploads/2026/03/lwN_yu2.png">
+    </div>
+
+    <div id="exansform">
+      <div class="exans-inner">
+        あなたが最後に報告した、<br>
+        場所の名前を表す言葉を<br>
+        ４文字で答えてください。<br><br>
+
+        <input type="text" class="txt" id="exform" value="" placeholder="４文字の言葉を入力"><br>
+        <button type="button" class="exansbutton" id="exbuttonlast">解　答</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleClue() {
+      const clue = document.getElementById('clue');
+      const dlue = document.getElementById('dlue');
+
+      if (clue.style.display === 'none' || clue.style.display === '') {
+        clue.style.display = 'block';
+        dlue.style.display = 'none';
+      } else {
+        clue.style.display = 'none';
+        dlue.style.display = 'block';
+      }
+    }
+  </script>
+
+  <script src="https://noescape.co.jp/nazomemo/wp-content/themes/habakiri/js/script20.js" defer></script>
+</body>
+</html>
